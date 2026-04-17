@@ -226,10 +226,65 @@ p {
   font-size: 0.875rem;
 }
 
+/* ---------- Top Contact Bar ---------- */
+.top-bar {
+  background: linear-gradient(90deg, var(--color-secondary) 0%, #1e4a73 100%);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.top-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  height: 36px;
+}
+
+.top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color var(--transition);
+}
+
+.top-bar-item:hover {
+  color: var(--color-accent);
+}
+
+.top-bar-icon {
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+}
+
+.top-bar-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,0.2);
+}
+
 /* ---------- Header / Navigation ---------- */
 .header {
   position: fixed;
-  top: 0;
+  top: 36px;
   left: 0;
   width: 100%;
   height: var(--header-height);
@@ -340,7 +395,7 @@ p {
   justify-content: center;
   text-align: center;
   color: var(--color-text-inverse);
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) + 36px);
   overflow: hidden;
   background: linear-gradient(135deg, var(--color-secondary) 0%, #0d2137 100%);
 }
@@ -1373,6 +1428,19 @@ p {
 @media (max-width: 768px) {
   :root {
     --header-height: 70px;
+  }
+
+  .top-bar {
+    display: none;
+  }
+
+  .header {
+    top: 0;
+  }
+
+  .hero,
+  .page-hero {
+    margin-top: var(--header-height) !important;
   }
 
   h1 { font-size: 1.875rem; }

@@ -58,6 +58,14 @@ img {
   display: block;
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -285,13 +293,30 @@ p {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+}
+
+.top-bar-icon .icon {
+  stroke-width: 2.25;
 }
 
 .top-bar-divider {
   width: 1px;
   height: 14px;
   background: rgba(255,255,255,0.2);
+}
+
+.top-bar-ein {
+  cursor: default;
+  color: rgba(255,255,255,0.7);
+}
+
+.top-bar-ein:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+.top-bar-ein .top-bar-icon {
+  font-size: 0.6rem;
 }
 
 /* ---------- Header / Navigation ---------- */
@@ -488,6 +513,37 @@ p {
   z-index: 2;
   max-width: 800px;
   padding: 3rem 1.5rem;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 1.5rem;
+}
+
+.trust-badge .icon {
+  color: var(--color-accent);
+}
+
+@media (max-width: 480px) {
+  .trust-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .trust-badge-ein {
+    display: none;
+  }
 }
 
 .hero-content h1 {
@@ -874,7 +930,18 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.75rem;
+  color: var(--color-primary);
+}
+
+.value-card:nth-child(2) .value-icon {
+  background: rgba(26, 58, 92, 0.08);
+  color: var(--color-secondary);
+}
+
+.value-card:nth-child(3) .value-icon {
+  background: rgba(244, 160, 36, 0.12);
+  color: var(--color-accent);
 }
 
 .value-card h3 {
@@ -1598,6 +1665,7 @@ p {
   justify-content: center;
   font-size: 1.25rem;
   flex-shrink: 0;
+  color: var(--color-primary);
 }
 
 .benefit-card h4 {
@@ -1613,6 +1681,11 @@ p {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
+  .top-bar-ein,
+  .top-bar-divider-ein {
+    display: none;
+  }
+
   h1 { font-size: 2.25rem; }
   h2 { font-size: 1.875rem; }
 

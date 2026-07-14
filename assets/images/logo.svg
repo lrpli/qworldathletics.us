@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Q World Athletics">
+  <title>Q World Athletics</title>
+  <!-- The bowl of the Q doubles as a running track viewed from above. -->
+  <circle cx="32" cy="32" r="21" fill="none" stroke="#E8491D" stroke-width="10"/>
+  <!-- Lane divider: a hairline down the middle of the track splits it into two lanes. -->
+  <circle cx="32" cy="32" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.55"/>
+  <!-- Tail starts inside the bowl and cuts across the track, so it reads as a Q
+       rather than a magnifier handle. -->
+  <path d="M39.8 39.8 L55.3 55.3" stroke="#F4A024" stroke-width="9" stroke-linecap="round"/>
+</svg>

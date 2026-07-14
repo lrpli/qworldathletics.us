@@ -356,14 +356,8 @@ p {
 .logo-icon {
   width: 44px;
   height: 44px;
-  background: var(--color-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 800;
-  font-size: 1.1rem;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav-list {

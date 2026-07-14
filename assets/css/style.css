@@ -508,9 +508,11 @@ p {
   50%       { transform: translateY(-30px) rotate(15deg); }
 }
 
+/* Sits above the decorative ::before curve (z-index 3) so hero copy and
+   buttons are never clipped by it. */
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   max-width: 800px;
   padding: 3rem 1.5rem;
 }
@@ -682,6 +684,8 @@ p {
   font-size: 3.5rem;
   opacity: 0.9;
   color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .card-body {
@@ -750,12 +754,10 @@ p {
   cursor: pointer;
 }
 
+/* Feature item fills the left column across both rows; the remaining four
+   items fill the other four cells exactly (2 + 1 + 1 + 1 + 1 = 6). */
 .gallery-item-tall {
   grid-row: span 2;
-}
-
-.gallery-item-wide {
-  grid-column: span 2;
 }
 
 .gallery-item img {
@@ -1906,7 +1908,7 @@ p {
     grid-template-columns: 1fr;
   }
 
-  /* Gallery */
+  /* Gallery: feature item goes full-width, other four fill a 2x2 below it */
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 200px 200px 200px;
@@ -1914,9 +1916,6 @@ p {
 
   .gallery-item-tall {
     grid-row: span 1;
-  }
-
-  .gallery-item-wide {
     grid-column: span 2;
   }
 }
@@ -1930,6 +1929,13 @@ p {
   .hero-buttons .btn {
     width: 100%;
     max-width: 280px;
+  }
+
+  /* Stacked buttons make the hero copy tall enough to reach the 80px
+     decorative curve; keep it clear of the white so the outline button
+     stays legible. */
+  .hero-content {
+    padding-bottom: 6.5rem;
   }
 
   .stats-row {
@@ -1946,8 +1952,7 @@ p {
   }
 
   .gallery-item,
-  .gallery-item-tall,
-  .gallery-item-wide {
+  .gallery-item-tall {
     grid-row: span 1;
     grid-column: span 1;
     height: 220px;
